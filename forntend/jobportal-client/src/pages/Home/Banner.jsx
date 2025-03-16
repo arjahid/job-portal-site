@@ -10,10 +10,21 @@ const Banner = () => {
       className="max-w-sm rounded-lg shadow-2xl" />
    </div>
     <div className='flex-1'>
-      <motion.h1
-      animate={{x:50,color:['red','blue','green']}}
-        transition={{duration:2,delay:1,ease:'easeInOut',repeat:Infinity}}
-      className="text-5xl font-bold">job News!</motion.h1>
+    <motion.h1
+            animate={{ x: [0, 50, 0], color: ['#ff0000', '#0000ff', '#00ff00'] }}
+            transition={{ duration: 2, delay: 1, ease: 'easeInOut', repeat: Infinity }}
+            className="text-5xl font-bold"
+          >
+            Job{' '}
+            <motion.span
+              animate={{ x: [0, 50, 0], color: ['#ff0000', '#0000ff', '#00ff00'] }}
+              transition={{ duration: 2, delay: 1, ease: 'easeInOut', repeat: Infinity }}
+            
+            >
+              Latest
+            </motion.span>{' '}
+            News!
+          </motion.h1>
       <p className="py-6">
         Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
         quasi. In deleniti eaque aut repudiandae et a id nisi.
