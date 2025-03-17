@@ -3,16 +3,16 @@ import { FaBriefcase, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 
 const JobCard = ({ title, company, location, type, posted }) => {
     return (
-        <div className="card w-full max-w-xs bg-base-100 shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+        <div className="card w-full max-w-xs bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300">
             <div className="card-body p-4">
                 <h2 className="card-title text-sm flex items-center">
-                    <FaBriefcase className="mr-2 text-blue-600" /> {title}
+                    <FaBriefcase className="mr-2 text-yellow-300" /> {title}
                 </h2>
-                <p className="text-xs text-gray-600">{company}</p>
-                <div className="mt-2 flex items-center text-gray-600 text-xs">
+                <p className="text-xs">{company}</p>
+                <div className="mt-2 flex items-center text-yellow-300 text-xs">
                     <FaMapMarkerAlt className="mr-2" /> {location}
                 </div>
-                <div className="mt-2 flex items-center text-gray-600 text-xs">
+                <div className="mt-2 flex items-center text-yellow-300 text-xs">
                     <FaClock className="mr-2" /> {type} | Posted: {posted}
                 </div>
                 <div className="card-actions justify-end mt-2">
@@ -63,7 +63,7 @@ const JobPortal = () => {
     ];
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 p-4">
             {jobs.map((job, index) => (
                 <JobCard
                     key={index}
