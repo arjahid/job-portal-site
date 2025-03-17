@@ -3,8 +3,10 @@ import React, { useContext } from "react";
 import animationData from "../../assets/lottiefy/register.json";
 import AuthContext from "../../context/AuthContex/AuthContex";
 import SocialLogin from "../sigin/SocialLogin";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const navigate=useNavigate();
   const { createUser } = useContext(AuthContext);
   const hanldeRegister = (e) => {
     e.preventDefault();
@@ -27,6 +29,7 @@ const Register = () => {
         console.log(res.user);
         if (res.user) {
           alert("User created successfully");
+          navigate('/')
         }
       })
       .catch((err) => {
@@ -35,11 +38,11 @@ const Register = () => {
   };
   return (
     <div className="hero bg-base-200 min-h-screen">
-      <div className="hero-content flex-col lg:flex-row-reverse">
-        <div className="text-center lg:text-left w-96">
+      <div className="hero-content flex-col lg:flex-row-reverse w-full">
+        <div className="text-center lg:text-left w-full lg:w-1/2">
           <Lottie animationData={animationData}></Lottie>
         </div>
-        <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+        <div className="card bg-base-100 w-full lg:w-1/2 max-w-sm shrink-0 shadow-2xl">
           <h1 className="text-5xl font-bold ml-8 mt-4">Register now!</h1>
           <div className="card-body">
             <form onSubmit={hanldeRegister} className="fieldset">
@@ -65,7 +68,6 @@ const Register = () => {
             <div className="divider">OR</div>
             <div className="flex justify-center">
               <SocialLogin></SocialLogin>
-           
             </div>
           </div>
         </div>
