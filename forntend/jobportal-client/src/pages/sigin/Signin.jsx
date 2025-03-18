@@ -1,12 +1,20 @@
-import Lottie from 'lottie-react';
-import React, { useContext } from 'react';
-import loginnAnimation from '../../assets/lottiefy/login.json';
-import AuthContext from '../../context/AuthContex/AuthContex';
-import SocialLogin from './SocialLogin';
-import { Link } from 'react-router-dom';
+import Lottie from "lottie-react";
+import React, { useContext } from "react";
+import loginnAnimation from "../../assets/lottiefy/login.json";
+import AuthContext from "../../context/AuthContex/AuthContex";
+import SocialLogin from "./SocialLogin";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Signin = () => {
   const { signInUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log("signin", location);
+  const from=location.state || '/';
+  console.log('form',from);
+
+
+
   const hanldeSignin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -17,13 +25,15 @@ const Signin = () => {
     signInUser(email, password)
       .then((res) => {
         console.log(res.user);
+     
         if (res.user) {
-          alert('User logged in successfully');
+          alert("User logged in successfully");
+          navigate(from);
         }
       })
       .catch((err) => {
         console.log(err);
-        alert('Invalid credentials');
+        alert("Invalid credentials");
       });
   };
 
@@ -56,7 +66,12 @@ const Signin = () => {
               </div>
               <button className="btn btn-neutral mt-4">Login</button>
             </form>
-            <p>New?<Link to='/register'>Register</Link></p>
+            <p>
+              New?
+              <Link to="/register" className="text-green-600">
+                Register
+              </Link>
+            </p>
             <div className="divider">OR</div>
             <div className="flex justify-center">
               <SocialLogin></SocialLogin>

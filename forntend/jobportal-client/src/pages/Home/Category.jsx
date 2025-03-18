@@ -3,7 +3,7 @@ import { FaBriefcase, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 
 const JobCard = ({ title, company, location, type, posted }) => {
     return (
-        <div className="card w-full max-w-xs bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 container mx-auto">
+        <div className="card w-full max-w-xs bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 container mx-auto mt-2">
             <div className="card-body p-4">
                 <h2 className="card-title text-sm flex items-center">
                     <FaBriefcase className="mr-2 text-yellow-300" /> {title}

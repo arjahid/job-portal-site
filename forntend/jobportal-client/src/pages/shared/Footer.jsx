@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../../public/icons8-job-application-96.png";
+import logo from "../../../src/logo/icons8-job-application-96.png";
 
 const Footer = () => {
   return (

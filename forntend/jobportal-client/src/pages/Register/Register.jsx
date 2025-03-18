@@ -29,7 +29,7 @@ const Register = () => {
         console.log(res.user);
         if (res.user) {
           alert("User created successfully");
-          navigate('/')
+          // navigate('/')
         }
       })
       .catch((err) => {
