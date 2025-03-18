@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import AuthContext from "../../context/AuthContex/AuthContex";
+import Swal from 'sweetalert2'
 
 const JobApply = () => {
   const { id } = useParams();
@@ -34,6 +35,14 @@ const JobApply = () => {
     .then(res=>res.json())
     .then(data=>{
         console.log(data);
+        if(data.insertedId){
+            Swal.fire({
+                title: 'Success!',
+                text: 'Application submitted successfully',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+              })
+        }
     })
   };
 
