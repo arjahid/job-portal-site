@@ -1,9 +1,10 @@
 import React from 'react';
 import { FaDollarSign, FaMapMarkerAlt } from 'react-icons/fa';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const JobDetails = () => {
     const {
+        _id,
         title,
         company,
         company_logo,
@@ -42,7 +43,7 @@ const JobDetails = () => {
                     <p className="text-lg font-bold text-blue-700">
                         Salary Range: <FaDollarSign className="inline-block ml-1" /> {salaryRange.min}-{salaryRange.max} {salaryRange.currency}
                     </p>
-                    <button className="btn btn-primary">Apply Now</button>
+                    <Link to={`/jobApply/${_id}`}><button className="btn btn-primary">Apply Now</button></Link>
                 </div>
             </div>
         </div>
