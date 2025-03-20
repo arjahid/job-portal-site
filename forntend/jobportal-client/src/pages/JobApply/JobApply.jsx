@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import AuthContext from "../../context/AuthContex/AuthContex";
 import Swal from 'sweetalert2'
 
 const JobApply = () => {
+    const navigate=useNavigate()
   const { id } = useParams();
   console.log(id);
   const { user } = useContext(AuthContext);
@@ -42,6 +43,7 @@ const JobApply = () => {
                 icon: 'success',
                 confirmButtonText: 'Cool'
               })
+                navigate('/myapplication')
         }
     })
   };
