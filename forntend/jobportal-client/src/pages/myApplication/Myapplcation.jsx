@@ -3,7 +3,9 @@ import AuthContext from '../../context/AuthContex/AuthContex';
 
 const Myapplcation = () => {
     const { user } = useContext(AuthContext);
+    
     const [jobs, setJobs] = useState([]);
+    console.log('dkjhfdjhf',jobs)
 
     useEffect(() => {
         fetch(`http://localhost:3000/job-application?email=${user.email}`)
