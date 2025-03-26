@@ -11,6 +11,10 @@ const Footer = () => {
           <br />
           Providing reliable tech since 1992
         </p>
+        <p class="text-sm">
+      &copy; 2025 created Md. jahid hasan. All rights reserved.
+    </p>
+
       </aside>
       <nav className="mb-4 sm:mb-0">
         <h6 className="footer-title">Services</h6>
