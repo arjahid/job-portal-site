@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import Swal from 'sweetalert2';
 import AuthContext from '../../context/AuthContex/AuthContex';
+import { useNavigate } from 'react-router-dom';
 
 const AddJob = () => {
     const { user } = useContext(AuthContext);
+    const navigate=useNavigate()
 
     const handleAddJob = e => {
         e.preventDefault();
@@ -15,7 +17,7 @@ const AddJob = () => {
         newJob.responsibilities = newJob.responsibilities.split('\n');
         console.log(newJob);
 
-        fetch('https://job-portal-server-for-recruiter-part3.vercel.app/jobs', {
+        fetch('http://localhost:3000/jobs', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
