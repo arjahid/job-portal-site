@@ -3,7 +3,7 @@ import logo from "../../../src/logo/icons8-job-application-96.png";
 
 const Footer = () => {
   return (
-    <footer className="footer bg-base-200 text-base-content p-10 flex flex-col sm:flex-row sm:justify-between">
+    <footer className="footer bg-base-200 text-base-content p-10 flex flex-col sm:flex-row sm:justify-between mt-5">
       <aside className="mb-4 sm:mb-0">
         <img src={logo} alt="Job Portal Logo" className="w-16 h-16" />
         <p>

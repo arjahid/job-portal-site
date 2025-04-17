@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import loginnAnimation from "../../assets/lottiefy/login.json";
 import AuthContext from "../../context/AuthContex/AuthContex";
 import SocialLogin from "./SocialLogin";
+import axios from 'axios';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Signin = () => {
@@ -10,10 +11,8 @@ const Signin = () => {
   const navigate = useNavigate();
   const location = useLocation();
   console.log("signin", location);
-  const from=location.state || '/';
-  console.log('form',from);
-
-
+  const from = location.state || "/";
+  console.log("form", from);
 
   const hanldeSignin = (e) => {
     e.preventDefault();
@@ -25,10 +24,17 @@ const Signin = () => {
     signInUser(email, password)
       .then((res) => {
         console.log(res.user);
-     
+
         if (res.user) {
           alert("User logged in successfully");
-          navigate(from);
+          const user=res.user.email;
+          axios.post('http://localhost:5173/jwt',user,{
+            withCredentials: true,
+          })
+          .then(res =>{
+            console.log('oy kire',res.data);
+          })
+          // navigate(from);
         }
       })
       .catch((err) => {
