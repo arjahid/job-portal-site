@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
-const UseJob = () => {
+const UseJob = (sort) => {
     const [jobs,setJobs]=useState();
     const [loading,setLoading]=useState(true);
 
     useEffect(()=>{
-        fetch('http://localhost:3000/jobs')
+        fetch(`http://localhost:3000/jobs?sort=${sort}`)
         .then(res=>res.json())
         .then(data=>{
             console.log(data)
@@ -13,7 +13,7 @@ const UseJob = () => {
             setLoading(false)
         })
         .catch(error=>console.log(error))
-    },[])
+    },[sort ])
 
 
 
