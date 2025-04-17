@@ -11,7 +11,7 @@ const MyPostedJob = () => {
         const fetchJobs = async () => {
             try {
                 if (user?.email) {
-                    const response = await fetch(`https://job-portal-backend.onrender.com/jobs?email=${user.email}`);
+                    const response = await fetch(`https://job-portal-backend-kb8n.onrender.com/jobs?email=${user.email}`);
                     if (!response.ok) {
                         throw new Error(`Error: ${response.statusText}`);
                     }

@@ -27,7 +27,7 @@ const router = createBrowserRouter([
       {
         path:'jobs/:id',
         element:<PrivateRoute><JobDetails></JobDetails></PrivateRoute>,
-        loader:({params})=>fetch(`https://job-portal-backend.onrender.com/jobs/${params.id}`)
+        loader:({params})=>fetch(`https://job-portal-backend-kb8n.onrender.com/jobs/${params.id}`)
       },
       {
         path:'/jobApply/:id',

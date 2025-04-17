@@ -26,7 +26,7 @@ const JobApply = () => {
     };
     console.log(application);
     // Handle form submission logic here
-    fetch('http://localhost:3000/job-application',{
+    fetch('https://job-portal-backend-kb8n.onrender.com/job-application',{
         method:'POST',
         headers:{
             'Content-Type':'application/json'

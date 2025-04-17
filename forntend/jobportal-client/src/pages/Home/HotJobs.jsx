@@ -4,7 +4,7 @@ import HotJobsCard from './HotJobsCard';
 const HotJobs = () => {
     const [jobs,setJobs]=useState([])
     useEffect(()=>{
-        fetch('https://job-portal-backend.onrender.com/jobs')
+        fetch('https://job-portal-backend-kb8n.onrender.com/jobs')
         .then(res=>res.json())
         .then(data=>{
             console.log(data)

@@ -8,7 +8,7 @@ const Myapplcation = () => {
     console.log('dkjhfdjhf',jobs)
 
     useEffect(() => {
-        fetch(`http://localhost:3000/job-application?email=${user.email}`)
+        fetch(`https://job-portal-backend-kb8n.onrender.com/job-application?email=${user.email}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
