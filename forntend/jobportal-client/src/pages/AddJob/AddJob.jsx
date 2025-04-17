@@ -17,7 +17,7 @@ const AddJob = () => {
         newJob.responsibilities = newJob.responsibilities.split('\n');
         console.log(newJob);
 
-        fetch('http://localhost:3000/jobs', {
+        fetch('https://job-portal-backend.onrender.com/jobs', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
