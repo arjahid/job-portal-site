@@ -48,32 +48,13 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       console.log("state captured", currentUser);
-      if (currentUser?.email) {
-        const user = { email: currentUser.email };
-        axios.post("http://localhost:5173/jwt", user, {
-          withCredentials: true,
-        })
-        .then(res=>{
-            console.log(res.data)
-            setLOading(false);
-        });
-      }
-      else {
-        axios.post('http://localhost:5173/logout',{
-            withCredentials: true,
-        
-        })
-        .then(res=>{
-            console.log('logout',res.data)
-            setLOading(false);
-        })
-      }
-      
+      setLOading(false);
     });
     return () => {
       unsubscribe();
     };
   }, []);
+  
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );

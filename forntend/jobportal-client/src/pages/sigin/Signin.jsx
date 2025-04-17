@@ -27,14 +27,8 @@ const Signin = () => {
 
         if (res.user) {
           alert("User logged in successfully");
-          const user=res.user.email;
-          axios.post('http://localhost:5173/jwt',user,{
-            withCredentials: true,
-          })
-          .then(res =>{
-            console.log('oy kire',res.data);
-          })
-          // navigate(from);
+          
+          navigate(from);
         }
       })
       .catch((err) => {
