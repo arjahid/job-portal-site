@@ -5,7 +5,7 @@ const UseJob = (sort) => {
     const [loading,setLoading]=useState(true);
 
     useEffect(()=>{
-        fetch(`http://localhost:3000/jobs?sort=${sort}`)
+        fetch(`https://job-portal-backend.onrender.com/jobs?sort=${sort}`)
         .then(res=>res.json())
         .then(data=>{
             console.log(data)
